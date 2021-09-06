@@ -8,12 +8,11 @@ const FeedbackOptions = ({ onLeaveFeedback, options }) => {
         return (
           <button
             type="button"
-            key={option.id}
-            name={option.label}
+            key={option}
+            name={option}
             onClick={onLeaveFeedback}
-            value={option.value}
           >
-            {option.value.charAt(0).toUpperCase() + option.value.slice(1)}
+            {option.charAt(0).toUpperCase() + option.slice(1)}
           </button>
         );
       })}

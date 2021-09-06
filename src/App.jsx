@@ -4,12 +4,12 @@ import Section from './components/Section/Section';
 import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
 import Statistics from './components/Statistics/Statistics';
 import Notification from './components/Notification/Notification';
-import Options from '../src/options.json';
 
 export default function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const options = { good, neutral, bad };
 
   const incrementFeedback = event => {
     const { name } = event.target;
@@ -41,7 +41,7 @@ export default function App() {
     <div className="App">
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={Options}
+          options={Object.keys(options)}
           onLeaveFeedback={incrementFeedback}
         ></FeedbackOptions>
       </Section>
